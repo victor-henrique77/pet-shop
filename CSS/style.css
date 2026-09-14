@@ -70,109 +70,77 @@ button {
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px 32px;
-  background: rgba(251, 246, 236, 0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  justify-content: center;
+  padding: 16px 32px;
+  background: var(--moss-deep);
 }
 
 .logo {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: var(--moss-deep);
-  text-decoration: none;
+  color: var(--paper);
+  letter-spacing: 0.02em;
 }
 
-.logo span { color: var(--tangerine); }
-
-.header-nav {
-  display: flex;
-  gap: 28px;
-  margin-inline: auto;
-}
-
-.header-nav a {
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  transition: color .15s ease;
-}
-
-.header-nav a:hover { color: var(--moss-deep); }
+.logo .dot { color: var(--tangerine); }
 
 .icon-button {
+  position: absolute;
+  right: 32px;
   background: none;
   border: none;
-  color: var(--moss-deep);
+  color: var(--paper);
   padding: 6px;
   border-radius: 50%;
   transition: background .15s ease;
 }
 
-.icon-button:hover { background: var(--sand); }
-
-@media (max-width: 720px) {
-  .header-nav { display: none; }
-}
+.icon-button:hover { background: rgba(255,255,255,0.12); }
 
 /* =========================================================
    HERO
    ========================================================= */
 .hero {
-  position: relative;
-  overflow: hidden;
-  padding: 96px 32px 120px;
-  background: var(--moss-deep);
-  color: var(--paper);
-}
-
-.hero-shape {
-  position: absolute;
-  inset: -20% -10% auto auto;
-  width: 620px;
-  height: 620px;
-  border-radius: 46% 54% 62% 38% / 48% 42% 58% 52%;
-  background: linear-gradient(135deg, var(--moss-soft), var(--tangerine) 130%);
-  opacity: 0.55;
-  filter: blur(2px);
-}
-
-.hero-content {
-  position: relative;
-  max-width: 620px;
-  margin-inline: auto;
+  padding: 64px 24px 40px;
+  background: var(--cream);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-kicker {
   font-weight: 600;
-  color: var(--tangerine);
+  color: var(--tangerine-deep);
   letter-spacing: 0.01em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .hero h1 {
-  color: var(--paper);
-  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  font-size: clamp(2rem, 4.4vw, 3rem);
   font-weight: 600;
-  max-width: 15ch;
+  max-width: 16ch;
+  margin-inline: auto;
 }
 
 .hero-lead {
-  margin-top: 20px;
+  margin: 18px auto 0;
   max-width: 46ch;
-  font-size: 1.1rem;
-  color: #DCE5DE;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
 }
 
-.hero-actions {
-  display: flex;
-  gap: 14px;
+.hero-image {
+  width: min(420px, 90%);
+  aspect-ratio: 16 / 11;
   margin-top: 36px;
-  flex-wrap: wrap;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--moss), var(--moss-soft));
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
@@ -194,28 +162,21 @@ button {
 }
 .btn-primary:hover { background: var(--tangerine-deep); color: var(--paper); }
 
-.btn-ghost {
-  border-color: rgba(255,255,255,0.4);
-  color: var(--paper);
-}
-.btn-ghost:hover { border-color: var(--paper); }
-
 .scroll-button {
-  position: absolute;
-  left: 32px;
-  bottom: 32px;
+  margin-top: 28px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.4);
-  background: transparent;
-  color: var(--paper);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--moss-deep);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 10px 20px -14px rgba(29, 47, 39, 0.35);
   transition: background .15s ease;
 }
-.scroll-button:hover { background: rgba(255,255,255,0.12); }
+.scroll-button:hover { background: var(--sand); }
 
 /* =========================================================
    BUSCA
@@ -223,10 +184,8 @@ button {
 .search-section {
   display: flex;
   justify-content: center;
-  padding: 32px 24px;
+  padding: 8px 24px 32px;
   background: var(--cream);
-  margin-top: -48px;
-  position: relative;
 }
 
 .search-box {
@@ -256,37 +215,35 @@ button {
    ========================================================= */
 .categories {
   max-width: var(--max);
-  margin: 40px auto 0;
-  padding: 0 24px;
+  margin: 8px auto 0;
+  padding: 0 24px 48px;
   text-align: center;
 }
 
-.categories h2 {
-  font-size: 1.5rem;
-  margin-bottom: 24px;
-}
-
-.category-grid {
+.category-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
+  margin-top: 12px;
 }
 
+.category-row:first-child { margin-top: 0; }
+
 .category-button {
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: 1.5px solid var(--line);
-  background: var(--paper);
-  color: var(--moss-deep);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: var(--moss-deep);
+  color: var(--paper);
   font-weight: 600;
   font-size: 0.95rem;
-  transition: border-color .15s ease, background .15s ease;
+  transition: background .15s ease, transform .15s ease;
 }
 
 .category-button:hover {
-  border-color: var(--moss);
-  background: var(--sand);
+  background: var(--tangerine-deep);
+  transform: translateY(-1px);
 }
 
 /* =========================================================
@@ -564,6 +521,126 @@ button {
 
 @media (max-width: 900px) {
   .content-cards-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   TAG ROW (small pill chips under carousels/sections)
+   ========================================================= */
+.tag-row {
+  max-width: var(--max);
+  margin: 18px auto 0;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-row--tight { margin-top: 14px; padding: 0; }
+
+.tag-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--sand);
+  color: var(--moss-deep);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   FEATURED SERVICES (2 large cards side by side)
+   ========================================================= */
+.featured-grid {
+  max-width: var(--max);
+  margin: 20px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap);
+}
+
+.featured-card {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.featured-image {
+  aspect-ratio: 16 / 9;
+  background: var(--moss);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+}
+
+.featured-body { padding: 22px 24px 26px; }
+
+.featured-body h3 { font-size: 1.2rem; margin-bottom: 8px; }
+
+.featured-body p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 780px) {
+  .featured-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   REVIEWS (3 cards: avatar + text)
+   ========================================================= */
+.reviews-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+.review-card {
+  display: flex;
+  gap: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.review-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--tangerine);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.review-body strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--moss-deep);
+}
+
+.review-stars { color: var(--tangerine-deep); font-size: 0.85rem; letter-spacing: 1px; }
+
+.review-body p {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 900px) {
+  .reviews-grid { grid-template-columns: 1fr; }
 }
 
 /* =========================================================
