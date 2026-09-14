@@ -1,4 +1,4 @@
-# 🐾 PetCarinho — Plataforma Web de Estética & Pet Shop
+# 🐾 LumoraPets — Plataforma Web de Estética & Pet Shop
 
 Uma plataforma web moderna, acolhedora e responsiva projetada para centros de estética animal, agendamento de serviços (banho, tosa, hidratação) e e-commerce de produtos pet (rações, coleiras, brinquedos e acessórios).
 
