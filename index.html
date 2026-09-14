@@ -1,424 +1,334 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focinho de Pet — tudo para o seu bicho</title>
+  <meta name="description" content="Ração, brinquedos, higiene e serviços para cães, gatos e outros pets, com dicas de cuidado para o dia a dia.">
 
-    <title>Pet Shop</title>
-
-    <!-- Fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/style.css">
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
-
-
 <body>
 
+  <!-- ========================= HEADER ========================= -->
+  <header class="site-header">
+    <a href="#topo" class="logo">Focinho<span>.</span></a>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+    <nav class="header-nav" aria-label="Navegação principal">
+      <a href="#categorias">Categorias</a>
+      <a href="#vitrine">Produtos</a>
+      <a href="#cuidados">Cuidados</a>
+      <a href="#artigos">Artigos</a>
+    </nav>
 
-    <header>
+    <button class="icon-button" aria-label="Ver sacola de compras">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+    </button>
+  </header>
 
-        <div class="logo">
-            LOGO
+
+  <!-- ========================= HERO ========================= -->
+  <section class="hero" id="topo">
+    <div class="hero-shape" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <p class="hero-kicker">Cuidado de verdade, todo santo dia</p>
+      <h1>Tudo o que seu pet precisa para viver melhor</h1>
+      <p class="hero-lead">Ração, higiene, brinquedos e serviços — escolhidos para quem entende que pet é família.</p>
+
+      <div class="hero-actions">
+        <a href="#vitrine" class="btn btn-primary">Ver produtos</a>
+        <a href="#cuidados" class="btn btn-ghost">Dicas de cuidado</a>
+      </div>
+    </div>
+
+    <button class="scroll-button" onclick="document.getElementById('busca').scrollIntoView({behavior:'smooth'})" aria-label="Ir para busca">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+
+  <!-- ========================= BUSCA ========================= -->
+  <section class="search-section" id="busca">
+    <label class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" placeholder="O que o seu pet precisa hoje?" id="searchInput" aria-label="Buscar produtos">
+    </label>
+  </section>
+
+
+  <!-- ========================= CATEGORIAS ========================= -->
+  <section class="categories" id="categorias">
+    <h2>Encontre o que seu pet precisa</h2>
+
+    <div class="category-grid">
+      <button class="category-button">Cachorro</button>
+      <button class="category-button">Gato</button>
+      <button class="category-button">Peixe</button>
+      <button class="category-button">Outros pets</button>
+      <button class="category-button">Promoções</button>
+      <button class="category-button">Serviços</button>
+      <button class="category-button">Casa e fora</button>
+    </div>
+  </section>
+
+
+  <main>
+
+    <!-- ================= BANNERS PROMOCIONAIS ================= -->
+    <section class="banners-grid" aria-label="Banners promocionais">
+      <article class="banner-card" style="--i:0"><span class="banner-icon">🐾</span></article>
+      <article class="banner-card" style="--i:1"><span class="banner-icon">🦴</span></article>
+      <article class="banner-card" style="--i:2"><span class="banner-icon">🐟</span></article>
+      <article class="banner-card" style="--i:3"><span class="banner-icon">🧴</span></article>
+      <article class="banner-card" style="--i:4"><span class="banner-icon">🎾</span></article>
+      <article class="banner-card" style="--i:5"><span class="banner-icon">✂️</span></article>
+    </section>
+
+    <!-- ================= VITRINE DE PRODUTOS ================= -->
+    <section class="carousel-section" id="vitrine" aria-label="Vitrine de produtos">
+      <div class="section-heading">
+        <h2>Vitrine da semana</h2>
+        <p class="sub-header">Selecionados a partir do que sua categoria mais procura</p>
+      </div>
+
+      <nav class="filters-bar" aria-label="Filtros de categorias de produtos">
+        <button class="filter-pill is-active">Rações</button>
+        <button class="filter-pill">Coleiras</button>
+        <button class="filter-pill">Brinquedos</button>
+        <button class="filter-pill">Estética</button>
+        <button class="filter-pill">Higiene</button>
+      </nav>
+
+      <div class="carousel-wrapper">
+        <div class="products-grid">
+
+          <article class="product-card">
+            <div class="product-image"><span class="product-emoji">🍖</span></div>
+            <div class="product-info">
+              <h3>Ração premium sabor carne</h3>
+              <p>Adulto · porte médio · 15kg</p>
+            </div>
+            <div class="product-price">
+              <span class="price-main">R$ 99,99</span>
+              <span class="price-sub">à vista, de R$ 199,99</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><span class="product-emoji">🐕</span></div>
+            <div class="product-info">
+              <h3>Coleira ajustável acolchoada</h3>
+              <p>Nylon resistente · P ao G</p>
+            </div>
+            <div class="product-price">
+              <span class="price-main">R$ 99,99</span>
+              <span class="price-sub">à vista, de R$ 199,99</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><span class="product-emoji">🎾</span></div>
+            <div class="product-info">
+              <h3>Kit brinquedos mordedores</h3>
+              <p>3 peças · borracha atóxica</p>
+            </div>
+            <div class="product-price">
+              <span class="price-main">R$ 99,99</span>
+              <span class="price-sub">à vista, de R$ 199,99</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><span class="product-emoji">🧴</span></div>
+            <div class="product-info">
+              <h3>Shampoo neutro hipoalergênico</h3>
+              <p>500ml · pele sensível</p>
+            </div>
+            <div class="product-price">
+              <span class="price-main">R$ 99,99</span>
+              <span class="price-sub">à vista, de R$ 199,99</span>
+            </div>
+          </article>
+
         </div>
 
-    </header>
-
-
-
-    <!-- =========================
-         TELA INICIAL
-    ========================== -->
-
-    <section class="hero">
-
-
-        <div class="hero-content">
-
-            <h1>
-                Tudo para o seu pet
-            </h1>
-
-            <p>
-                Cuide, proteja e dê carinho para quem faz parte da família.
-            </p>
-
-        </div>
-
-
-        <!-- BOTÃO DE ROLAGEM -->
-
-        <button
-            class="scroll-button"
-            onclick="document.getElementById('busca').scrollIntoView();"
-            aria-label="Ir para busca">
-
-            ↓
-
+        <button class="nav-arrow-btn" aria-label="Próxima página de produtos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
         </button>
-
-
-    </section>
-
-
-
-    <!-- =========================
-         BUSCA
-    ========================== -->
-
-    <section
-        class="search-section"
-        id="busca">
-
-        <div class="search-box">
-
-            <span class="search-icon">
-                🔍
-            </span>
-
-            <input
-                type="text"
-                placeholder="o que seu pet precisa?"
-                id="searchInput">
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CATEGORIAS
-    ========================== -->
-
-    <section class="categories">
-
-        <h2>
-            Encontre o que seu pet precisa
-        </h2>
-
-
-        <!-- PRIMEIRA LINHA -->
-
-        <div class="category-row">
-
-            <button class="category-button">
-                Cachorro
-            </button>
-
-            <button class="category-button">
-                Gato
-            </button>
-
-            <button class="category-button">
-                Peixe
-            </button>
-
-            <button class="category-button">
-                Outros pets
-            </button>
-
-        </div>
-
-
-        <!-- SEGUNDA LINHA -->
-
-        <div class="category-row">
-
-            <button class="category-button">
-                Promoções
-            </button>
-
-            <button class="category-button">
-                Serviços
-            </button>
-
-            <button class="category-button">
-                Casa e fora
-            </button>
-
-        </div>
-
-    </section>
-        <main class="container">
-        
-        <!-- 1. GRADE DE BANNERS PROMOCIONAIS SUPERIOR (3x2) -->
-        <section class="banners-grid" aria-label="Banners Promocionais">
-            <article class="banner-card">
-                <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </article>
-            <article class="banner-card">
-                <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </article>
-            <article class="banner-card">
-                <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </article>
-            <article class="banner-card">
-                <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </article>
-            <article class="banner-card">
-                <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </article>
-            <article class="banner-card">
-                <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </article>
-        </section>
-
-        <!-- 2. BARRA DE FILTROS / ABAS SECUNDÁRIAS -->
-        <nav class="filters-bar" aria-label="Filtros de categorias de produtos">
-            <button class="filter-pill active">Rações</button>
-            <button class="filter-pill">Coleiras</button>
-            <button class="filter-pill">Brinquedos</button>
-            <button class="filter-pill">Estética</button>
-            <button class="filter-pill">Higiene</button>
-        </nav>
-
-        <!-- 3. CARROSSEL DE CARDS DE PRODUTOS (VITRINE) -->
-        <section class="carousel-section" aria-label="Vitrine de Produtos">
-            <div class="carousel-wrapper">
-                
-                <div class="products-grid">
-                    <!-- CARD 1: RAÇÕES -->
-                    <article class="product-card">
-                        <div class="product-image-container">
-                            <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <div class="product-info">
-                            <div class="skeleton-line full"></div>
-                            <div class="skeleton-line short"></div>
-                        </div>
-                        <div class="product-price-box">
-                            <span class="price-main">R$ 99,99</span>
-                            <span class="price-sub">a vista 199,99</span>
-                        </div>
-                    </article>
-
-                    <!-- CARD 2: COLEIRAS -->
-                    <article class="product-card">
-                        <div class="product-image-container">
-                            <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <div class="product-info">
-                            <div class="skeleton-line full"></div>
-                            <div class="skeleton-line short"></div>
-                        </div>
-                        <div class="product-price-box">
-                            <span class="price-main">R$ 99,99</span>
-                            <span class="price-sub">a vista 199,99</span>
-                        </div>
-                    </article>
-
-                    <!-- CARD 3: BRINQUEDOS -->
-                    <article class="product-card">
-                        <div class="product-image-container">
-                            <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <div class="product-info">
-                            <div class="skeleton-line full"></div>
-                            <div class="skeleton-line short"></div>
-                        </div>
-                        <div class="product-price-box">
-                            <span class="price-main">R$ 99,99</span>
-                            <span class="price-sub">a vista 199,99</span>
-                        </div>
-                    </article>
-
-                    <!-- CARD 4: ESTÉTICA -->
-                    <article class="product-card">
-                        <div class="product-image-container">
-                            <svg class="banner-placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <div class="product-info">
-                            <div class="skeleton-line full"></div>
-                            <div class="skeleton-line short"></div>
-                        </div>
-                        <div class="product-price-box">
-                            <span class="price-main">R$ 99,99</span>
-                            <span class="price-sub">a vista 199,99</span>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Botão de Navegação do Carrossel (Seta Direita) -->
-                <button class="nav-arrow-btn" aria-label="Próxima página de produtos">►</button>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 1. CARROSSEL DE CATEGORIAS CIRCULARES 1 -->
-    <section class="carousel-section">
-      <div class="carousel-wrapper">
-        <div class="circles-grid">
-          
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Raças Pequenas</strong>
-              <p>Guia de portes</p>
-              <span>Conheça os perfis</span>
-            </div>
-          </div>
-
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Raças Médias</strong>
-              <p>Espaço e energia</p>
-              <span>Perfeito para famílias</span>
-            </div>
-          </div>
-
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Raças Grandes</strong>
-              <p>Força e carinho</p>
-              <span>Cuidados específicos</span>
-            </div>
-          </div>
-
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Gatos Exóticos</strong>
-              <p>Mundo felino</p>
-              <span>Curiosidades e dicas</span>
-            </div>
-          </div>
-
-        </div>
-        <button class="nav-arrow-btn" aria-label="Próximo slide">►</button>
       </div>
     </section>
 
-    <!-- 2. TÍTULO DE SEÇÃO 1 (2 LINHAS DE CABEÇALHO) -->
-    <header class="section-header">
-      <h2>CUIDADOS RÁPIDOS E BEM-ESTAR</h2>
-      <p class="sub-header">DICAS PRÁTICAS PARA O DIA A DIA DO SEU PET</p>
-    </header>
+  </main>
 
-    <!-- 3. CARROSSEL DE CATEGORIAS CIRCULARES 2 -->
-    <section class="carousel-section">
-      <div class="carousel-wrapper">
-        <div class="circles-grid">
 
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Higienização</strong>
-              <p>Banhos e tosas</p>
-              <span>Frequência ideal</span>
-            </div>
+  <!-- ================= RAÇAS: CARROSSEL CIRCULAR 1 ================= -->
+  <section class="carousel-section" aria-label="Guias de raças">
+    <div class="carousel-wrapper">
+      <div class="circles-grid">
+
+        <div class="circle-item">
+          <div class="circle-avatar">🐶</div>
+          <div class="circle-caption">
+            <strong>Raças pequenas</strong>
+            <p>Guia de portes</p>
+            <span>Conheça os perfis</span>
           </div>
-
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Vacinação</strong>
-              <p>Calendário anual</p>
-              <span>Mantenha atualizado</span>
-            </div>
-          </div>
-
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Alimentação</strong>
-              <p>Rações e petiscos</p>
-              <span>Porções diárias</span>
-            </div>
-          </div>
-
-          <div class="circle-item">
-            <div class="circle-avatar"></div>
-            <div class="circle-caption">
-              <strong>Exercícios</strong>
-              <p>Passeios diários</p>
-              <span>Saúde em dia</span>
-            </div>
-          </div>
-
         </div>
-        <button class="nav-arrow-btn" aria-label="Próximo slide">►</button>
-      </div>
-    </section>
 
-    <!-- 4. TÍTULO DE SEÇÃO 2 (2 LINHAS DE CABEÇALHO) -->
-    <header class="section-header">
-      <h2>NOTÍCIAS E ARTIGOS EM DESTAQUE</h2>
-      <p class="sub-header">FIQUE POR DENTRO DAS NOVIDADES DO MUNDO ANIMAL</p>
-    </header>
-
-    <!-- 5. CARROSSEL DE CARDS RETANGULARES DE CONTEÚDO -->
-    <section class="carousel-section">
-      <div class="carousel-wrapper">
-        <div class="content-cards-grid">
-
-          <article class="content-card">
-            <div class="card-image-placeholder"></div>
-            <div class="card-body">
-              <h3>Como escolher a melhor ração?</h3>
-              <p>Entenda os rótulos e ingredientes essenciais para cada fase da vida do animal.</p>
-              <span class="card-meta">Leitura de 3 minutos • Artigo</span>
-            </div>
-          </article>
-
-          <article class="content-card">
-            <div class="card-image-placeholder"></div>
-            <div class="card-body">
-              <h3>Adestramento positivo em casa</h3>
-              <p>Técnicas simples para ensinar comandos básicos e melhorar a convivência.</p>
-              <span class="card-meta">Leitura de 5 minutos • Guia</span>
-            </div>
-          </article>
-
-          <article class="content-card">
-            <div class="card-image-placeholder"></div>
-            <div class="card-body">
-              <h3>Sinais de ansiedade em pets</h3>
-              <p>Aprenda a identificar comportamentos estressantes e saiba como agir.</p>
-              <span class="card-meta">Leitura de 4 minutos • Saúde</span>
-            </div>
-          </article>
-
+        <div class="circle-item">
+          <div class="circle-avatar">🐕</div>
+          <div class="circle-caption">
+            <strong>Raças médias</strong>
+            <p>Espaço e energia</p>
+            <span>Perfeito para famílias</span>
+          </div>
         </div>
-        <button class="nav-arrow-btn" aria-label="Próximo slide">►</button>
+
+        <div class="circle-item">
+          <div class="circle-avatar">🐕‍🦺</div>
+          <div class="circle-caption">
+            <strong>Raças grandes</strong>
+            <p>Força e carinho</p>
+            <span>Cuidados específicos</span>
+          </div>
+        </div>
+
+        <div class="circle-item">
+          <div class="circle-avatar">🐈</div>
+          <div class="circle-caption">
+            <strong>Gatos exóticos</strong>
+            <p>Mundo felino</p>
+            <span>Curiosidades e dicas</span>
+          </div>
+        </div>
+
       </div>
-    </section>
+      <button class="nav-arrow-btn" aria-label="Próximo slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
 
 
+  <!-- ================= CUIDADOS RÁPIDOS ================= -->
+  <header class="section-header" id="cuidados">
+    <h2>Cuidados rápidos e bem-estar</h2>
+    <p class="sub-header">Dicas práticas para o dia a dia do seu pet</p>
+  </header>
 
-    <!-- =========================
-         CONTEÚDO FINAL
-    ========================== -->
+  <section class="carousel-section" aria-label="Categorias de cuidado">
+    <div class="carousel-wrapper">
+      <div class="circles-grid">
 
-    <section class="content">
+        <div class="circle-item">
+          <div class="circle-avatar">🛁</div>
+          <div class="circle-caption">
+            <strong>Higienização</strong>
+            <p>Banhos e tosas</p>
+            <span>Frequência ideal</span>
+          </div>
+        </div>
 
-        <h2>
-            Cuide de quem faz parte da sua família
-        </h2>
+        <div class="circle-item">
+          <div class="circle-avatar">💉</div>
+          <div class="circle-caption">
+            <strong>Vacinação</strong>
+            <p>Calendário anual</p>
+            <span>Mantenha atualizado</span>
+          </div>
+        </div>
 
-        <p>
-            Encontre produtos, serviços e soluções para deixar
-            seu pet saudável, feliz e bem cuidado.
-        </p>
+        <div class="circle-item">
+          <div class="circle-avatar">🍽️</div>
+          <div class="circle-caption">
+            <strong>Alimentação</strong>
+            <p>Rações e petiscos</p>
+            <span>Porções diárias</span>
+          </div>
+        </div>
 
-    </section>
+        <div class="circle-item">
+          <div class="circle-avatar">🏃</div>
+          <div class="circle-caption">
+            <strong>Exercícios</strong>
+            <p>Passeios diários</p>
+            <span>Saúde em dia</span>
+          </div>
+        </div>
 
-    <script src="JS/script.js"></script>
+      </div>
+      <button class="nav-arrow-btn" aria-label="Próximo slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
 
 
+  <!-- ================= ARTIGOS ================= -->
+  <header class="section-header" id="artigos">
+    <h2>Notícias e artigos em destaque</h2>
+    <p class="sub-header">Fique por dentro das novidades do mundo animal</p>
+  </header>
+
+  <section class="carousel-section" aria-label="Artigos em destaque">
+    <div class="carousel-wrapper">
+      <div class="content-cards-grid">
+
+        <article class="content-card">
+          <div class="card-image-placeholder">📖</div>
+          <div class="card-body">
+            <h3>Como escolher a melhor ração?</h3>
+            <p>Entenda os rótulos e ingredientes essenciais para cada fase da vida do animal.</p>
+            <span class="card-meta">Leitura de 3 minutos · Artigo</span>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-image-placeholder">🐾</div>
+          <div class="card-body">
+            <h3>Adestramento positivo em casa</h3>
+            <p>Técnicas simples para ensinar comandos básicos e melhorar a convivência.</p>
+            <span class="card-meta">Leitura de 5 minutos · Guia</span>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-image-placeholder">💛</div>
+          <div class="card-body">
+            <h3>Sinais de ansiedade em pets</h3>
+            <p>Aprenda a identificar comportamentos estressantes e saiba como agir.</p>
+            <span class="card-meta">Leitura de 4 minutos · Saúde</span>
+          </div>
+        </article>
+
+      </div>
+      <button class="nav-arrow-btn" aria-label="Próximo slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ================= CONTEÚDO FINAL ================= -->
+  <section class="closing">
+    <h2>Cuide de quem faz parte da sua família</h2>
+    <p>Encontre produtos, serviços e soluções para deixar seu pet saudável, feliz e bem cuidado.</p>
+    <a href="#vitrine" class="btn btn-primary">Explorar produtos</a>
+  </section>
+
+  <footer class="site-footer">
+    <span>© 2026 Focinho de Pet</span>
+    <nav aria-label="Links do rodapé">
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+      <a href="#">Política de privacidade</a>
+    </nav>
+  </footer>
+
+  <script src="JS/script.js"></script>
 </body>
-
 </html>
-```
