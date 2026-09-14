@@ -1,262 +1,507 @@
 /* ===================================================
-           VARIÁVEIS GLOBAIS & CONFIGURAÇÕES DE DESIGN
-           =================================================== */
-        :root {
-            /* Tipografia */
-            --font-heading: 'Chau Philomene One', cursive;
-            --font-body: 'Quicksand', sans-serif;
+   VARIÁVEIS GLOBAIS & CONFIGURAÇÕES DE DESIGN
+   =================================================== */
+:root {
+    /* Tipografia */
+    --font-primary: 'Poppins', sans-serif;
+    --font-heading: 'Chau Philomene One', cursive;
+    --font-body: 'Quicksand', sans-serif;
 
-            /* Cores */
-            --bg-page: #FAF5EF;         /* Bege Acolhedor */
-            --bg-card: #FFFFFF;         /* Branco */
-            --blue-primary: #1E3A8A;    /* Azul Confiança */
-            --blue-medium: #2563EB;     /* Azul Destaque */
-            --yellow-accent: #F59E0B;   /* Amarelo Amigável */
-            --yellow-hover: #D97706;    
-            --text-dark: #374151;       /* Texto Principal */
-            --text-muted: #6B7280;      /* Texto Secundário */
-            --placeholder-bg: #E5E7EB;  /* Cinza para placeholders */
+    /* Cores */
+    --bg-page: #f4f5f7;
+    --bg-card: #ffffff;
+    --blue-primary: #14243d;
+    --blue-medium: #2563eb;
+    --yellow-accent: #f5c400;
+    --yellow-hover: #d97706;
+    --text-dark: #14243d;
+    --text-muted: #68717c;
+    --placeholder-bg: #e5e7eb;
+    --border-color: #e1e3e6;
 
-            /* Layout e Sombras */
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-pill: 50px;
-            --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
-        }
+    /* Layout e Sombras */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-pill: 50px;
+    --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+/* ===================================================
+   CONFIGURAÇÕES GERAIS E RESET
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-page);
-            color: var(--text-dark);
-            padding: 2rem 1rem;
-            line-height: 1.5;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-page);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
 
-        /* ===================================================
-           1. GRADE DE BANNERS PROMOCIONAIS (3x2)
-           =================================================== */
-        .banners-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 160px);
-            gap: 1.25rem;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
 
-        .banner-card {
-            background-color: var(--placeholder-bg);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #D1D5DB;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+/* ===================================================
+   HEADER
+   =================================================== */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(225, 227, 230, 0.90);
+    z-index: 10;
+}
 
-        .banner-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-soft);
-        }
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--blue-primary);
+}
 
-        .banner-placeholder-icon {
-            width: 48px;
-            height: 48px;
-            opacity: 0.4;
-        }
+/* ===================================================
+   TELA INICIAL (HERO)
+   =================================================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
-        /* ===================================================
-           2. BARRA DE FILTROS / ABAS SECUNDÁRIAS
-           =================================================== */
-        .filters-bar {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-        }
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url("pet.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
 
-        .filter-pill {
-            font-family: var(--font-heading);
-            background-color: var(--blue-primary);
-            color: #FFFFFF;
-            border: none;
-            padding: 0.65rem 1.75rem;
-            border-radius: var(--radius-pill);
-            font-size: 1.05rem;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.2s, transform 0.1s, color 0.2s;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
 
-        .filter-pill:hover,
-        .filter-pill.active {
-            background-color: var(--yellow-accent);
-            color: var(--blue-primary);
-        }
+.hero-content h1 {
+    font-size: clamp(35px, 6vw, 70px);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
 
-        /* ===================================================
-           3. CARROSSEL DE CARDS DE PRODUTOS (VITRINE)
-           =================================================== */
-        .carousel-section {
-            position: relative;
-        }
+.hero-content p {
+    font-size: clamp(16px, 2vw, 24px);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
 
-        .carousel-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
+.scroll-button {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: var(--blue-primary);
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s;
+}
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-            width: 100%;
-        }
+.scroll-button:hover {
+    background: var(--yellow-accent);
+    color: var(--blue-primary);
+    transform: translateX(-50%) translateY(-5px);
+}
 
-        .product-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-sm);
-            padding: 1rem;
-            box-shadow: var(--shadow-soft);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
+/* ===================================================
+   SEÇÃO DE BUSCA
+   =================================================== */
+.search-section {
+    width: 100%;
+    padding: 40px 20px;
+    background: var(--bg-card);
+}
 
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
+.search-box {
+    max-width: 750px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    background: #f1f3f5;
+    border: 2px solid var(--border-color);
+    border-radius: 35px;
+    transition: 0.3s;
+}
 
-        /* Área superior: Imagem */
-        .product-image-container {
-            width: 100%;
-            height: 160px;
-            background-color: var(--placeholder-bg);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.search-box:focus-within {
+    border-color: var(--blue-primary);
+    box-shadow: 0 5px 20px rgba(20, 36, 61, 0.12);
+}
 
-        /* Meio: Esqueleto / Título em Quicksand */
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+.search-icon {
+    font-size: 22px;
+    margin-right: 12px;
+}
 
-        .skeleton-line {
-            height: 12px;
-            background-color: var(--placeholder-bg);
-            border-radius: 4px;
-        }
+.search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    color: var(--text-dark);
+}
 
-        .skeleton-line.full { width: 100%; }
-        .skeleton-line.short { width: 75%; }
+.search-box input::placeholder {
+    color: #777777;
+}
 
-        .product-title {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            display: none; /* Exibido quando substituído por texto real */
-        }
+/* ===================================================
+   CATEGORIAS & ABAS SECUNDÁRIAS
+   =================================================== */
+.categories {
+    padding: 55px 20px;
+    text-align: center;
+    background: var(--bg-page);
+}
 
-        /* Base: Preço e Condição */
-        .product-price-box {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
+.categories h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
 
-        .price-main {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
+.category-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 18px;
+}
 
-        .price-sub {
-            font-family: var(--font-body);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
+.category-button {
+    border: none;
+    padding: 13px 28px;
+    border-radius: 30px;
+    background: var(--blue-primary);
+    color: #ffffff;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        /* Seta de Navegação do Carrossel */
-        .nav-arrow-btn {
-            position: absolute;
-            right: -22px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background-color: var(--bg-card);
-            border: 1px solid #E5E7EB;
-            box-shadow: var(--shadow-soft);
-            color: var(--blue-primary);
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: background 0.2s, transform 0.2s, color 0.2s;
-        }
+.category-button:hover {
+    background: var(--yellow-accent);
+    color: var(--blue-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
 
-        .nav-arrow-btn:hover {
-            background-color: var(--yellow-accent);
-            color: var(--blue-primary);
-            transform: translateY(-50%) scale(1.08);
-        }
+/* BARRA DE FILTROS (PILLS) */
+.filters-bar {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
 
-        /* ===================================================
-           RESPONSIVIDADE (MOBILE-FIRST BREAKPOINTS)
-           =================================================== */
-        @media (max-width: 992px) {
-            .banners-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 140px);
-            }
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .nav-arrow-btn {
-                right: -10px;
-            }
-        }
+.filter-pill {
+    font-family: var(--font-heading);
+    background-color: var(--blue-primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.75rem;
+    border-radius: var(--radius-pill);
+    font-size: 1.05rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.1s, color 0.2s;
+}
 
-        @media (max-width: 576px) {
-            .banners-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            .banner-card {
-                height: 120px;
-            }
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-arrow-btn {
-                right: 0px;
-            }
-        }
+.filter-pill:hover,
+.filter-pill.active {
+    background-color: var(--yellow-accent);
+    color: var(--blue-primary);
+}
+
+/* ===================================================
+   GRADE DE BANNERS PROMOCIONAIS (3x2)
+   =================================================== */
+.banners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 160px);
+    gap: 1.25rem;
+}
+
+.banner-card {
+    background-color: var(--placeholder-bg);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d1d5db;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.banner-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+}
+
+.banner-placeholder-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.4;
+}
+
+/* ===================================================
+   CARROSSEL DE CARDS DE PRODUTOS (VITRINE)
+   =================================================== */
+.carousel-section {
+    position: relative;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 160px;
+    background-color: var(--placeholder-bg);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skeleton-line {
+    height: 12px;
+    background-color: var(--placeholder-bg);
+    border-radius: 4px;
+}
+
+.skeleton-line.full { width: 100%; }
+.skeleton-line.short { width: 75%; }
+
+.product-title {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: none;
+}
+
+.product-price-box {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.price-main {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.price-sub {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.nav-arrow-btn {
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    color: var(--blue-primary);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+
+.nav-arrow-btn:hover {
+    background-color: var(--yellow-accent);
+    color: var(--blue-primary);
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* ===================================================
+   SEÇÃO DE CONTEÚDO GERAL
+   =================================================== */
+.content {
+    min-height: 300px;
+    padding: 70px 20px;
+    background: var(--bg-card);
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.content p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   =================================================== */
+@media (max-width: 992px) {
+    .banners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 140px);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-arrow-btn {
+        right: -10px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .category-row {
+        flex-direction: column;
+    }
+
+    .category-button {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .banners-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .banner-card {
+        height: 120px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-arrow-btn {
+        right: 0px;
+    }
+}
