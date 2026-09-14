@@ -13,36 +13,23 @@
 </head>
 <body>
 
-  <!-- ========================= HEADER ========================= -->
+  <!-- ========================= 1. LOGO BAR ========================= -->
   <header class="site-header">
-    <a href="#topo" class="logo">Focinho<span>.</span></a>
-
-    <nav class="header-nav" aria-label="Navegação principal">
-      <a href="#categorias">Categorias</a>
-      <a href="#vitrine">Produtos</a>
-      <a href="#cuidados">Cuidados</a>
-      <a href="#artigos">Artigos</a>
-    </nav>
-
+    <span class="logo">Focinho<span class="dot">.</span></span>
     <button class="icon-button" aria-label="Ver sacola de compras">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
     </button>
   </header>
 
 
-  <!-- ========================= HERO ========================= -->
+  <!-- ========================= 2. HERO ========================= -->
   <section class="hero" id="topo">
-    <div class="hero-shape" aria-hidden="true"></div>
+    <p class="hero-kicker">Cuidado de verdade, todo santo dia</p>
+    <h1>Tudo o que seu pet precisa para viver melhor</h1>
+    <p class="hero-lead">Ração, higiene, brinquedos e serviços — escolhidos para quem entende que pet é família.</p>
 
-    <div class="hero-content">
-      <p class="hero-kicker">Cuidado de verdade, todo santo dia</p>
-      <h1>Tudo o que seu pet precisa para viver melhor</h1>
-      <p class="hero-lead">Ração, higiene, brinquedos e serviços — escolhidos para quem entende que pet é família.</p>
-
-      <div class="hero-actions">
-        <a href="#vitrine" class="btn btn-primary">Ver produtos</a>
-        <a href="#cuidados" class="btn btn-ghost">Dicas de cuidado</a>
-      </div>
+    <div class="hero-image" role="img" aria-label="Cão e gato juntos, felizes">
+      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2"/><path d="M21 15 15 9l-9 9"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
     </div>
 
     <button class="scroll-button" onclick="document.getElementById('busca').scrollIntoView({behavior:'smooth'})" aria-label="Ir para busca">
@@ -51,7 +38,7 @@
   </section>
 
 
-  <!-- ========================= BUSCA ========================= -->
+  <!-- ========================= 3. BUSCA ========================= -->
   <section class="search-section" id="busca">
     <label class="search-box">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
@@ -60,15 +47,15 @@
   </section>
 
 
-  <!-- ========================= CATEGORIAS ========================= -->
+  <!-- ========================= 4. CATEGORIAS ========================= -->
   <section class="categories" id="categorias">
-    <h2>Encontre o que seu pet precisa</h2>
-
-    <div class="category-grid">
+    <div class="category-row">
       <button class="category-button">Cachorro</button>
       <button class="category-button">Gato</button>
       <button class="category-button">Peixe</button>
       <button class="category-button">Outros pets</button>
+    </div>
+    <div class="category-row">
       <button class="category-button">Promoções</button>
       <button class="category-button">Serviços</button>
       <button class="category-button">Casa e fora</button>
@@ -78,23 +65,18 @@
 
   <main>
 
-    <!-- ================= BANNERS PROMOCIONAIS ================= -->
+    <!-- ================= 5. BANNERS (2x3) ================= -->
     <section class="banners-grid" aria-label="Banners promocionais">
-      <article class="banner-card" style="--i:0"><span class="banner-icon">🐾</span></article>
-      <article class="banner-card" style="--i:1"><span class="banner-icon">🦴</span></article>
-      <article class="banner-card" style="--i:2"><span class="banner-icon">🐟</span></article>
-      <article class="banner-card" style="--i:3"><span class="banner-icon">🧴</span></article>
-      <article class="banner-card" style="--i:4"><span class="banner-icon">🎾</span></article>
-      <article class="banner-card" style="--i:5"><span class="banner-icon">✂️</span></article>
+      <article class="banner-card"><span class="banner-icon">🐾</span></article>
+      <article class="banner-card"><span class="banner-icon">🦴</span></article>
+      <article class="banner-card"><span class="banner-icon">🐟</span></article>
+      <article class="banner-card"><span class="banner-icon">🧴</span></article>
+      <article class="banner-card"><span class="banner-icon">🎾</span></article>
+      <article class="banner-card"><span class="banner-icon">✂️</span></article>
     </section>
 
-    <!-- ================= VITRINE DE PRODUTOS ================= -->
+    <!-- ================= 6. FILTROS + VITRINE ================= -->
     <section class="carousel-section" id="vitrine" aria-label="Vitrine de produtos">
-      <div class="section-heading">
-        <h2>Vitrine da semana</h2>
-        <p class="sub-header">Selecionados a partir do que sua categoria mais procura</p>
-      </div>
-
       <nav class="filters-bar" aria-label="Filtros de categorias de produtos">
         <button class="filter-pill is-active">Rações</button>
         <button class="filter-pill">Coleiras</button>
@@ -165,7 +147,7 @@
   </main>
 
 
-  <!-- ================= RAÇAS: CARROSSEL CIRCULAR 1 ================= -->
+  <!-- ================= 7. RAÇAS: CÍRCULOS + TAGS ================= -->
   <section class="carousel-section" aria-label="Guias de raças">
     <div class="carousel-wrapper">
       <div class="circles-grid">
@@ -211,10 +193,18 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
       </button>
     </div>
+
+    <div class="tag-row" aria-label="Tags relacionadas">
+      <span class="tag-chip">Filhote</span>
+      <span class="tag-chip">Adulto</span>
+      <span class="tag-chip">Idoso</span>
+      <span class="tag-chip">Apartamento</span>
+      <span class="tag-chip">Quintal</span>
+    </div>
   </section>
 
 
-  <!-- ================= CUIDADOS RÁPIDOS ================= -->
+  <!-- ================= 8. CUIDADOS: CÍRCULOS + TAGS ================= -->
   <header class="section-header" id="cuidados">
     <h2>Cuidados rápidos e bem-estar</h2>
     <p class="sub-header">Dicas práticas para o dia a dia do seu pet</p>
@@ -265,10 +255,18 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
       </button>
     </div>
+
+    <div class="tag-row" aria-label="Tags relacionadas">
+      <span class="tag-chip">Diário</span>
+      <span class="tag-chip">Semanal</span>
+      <span class="tag-chip">Mensal</span>
+      <span class="tag-chip">Sazonal</span>
+      <span class="tag-chip">Emergência</span>
+    </div>
   </section>
 
 
-  <!-- ================= ARTIGOS ================= -->
+  <!-- ================= 9. ARTIGOS ================= -->
   <header class="section-header" id="artigos">
     <h2>Notícias e artigos em destaque</h2>
     <p class="sub-header">Fique por dentro das novidades do mundo animal</p>
@@ -313,7 +311,87 @@
   </section>
 
 
-  <!-- ================= CONTEÚDO FINAL ================= -->
+  <!-- ================= 10. SERVIÇOS EM DESTAQUE (2 CARDS) ================= -->
+  <header class="section-header" id="servicos">
+    <h2>Serviços em destaque</h2>
+    <p class="sub-header">Marque um horário direto pelo app ou na loja mais próxima</p>
+  </header>
+
+  <section class="carousel-section" aria-label="Serviços em destaque">
+    <div class="tag-row" aria-label="Tipos de serviço">
+      <span class="tag-chip">Agendamento rápido</span>
+      <span class="tag-chip">Sem fila</span>
+      <span class="tag-chip">Profissionais certificados</span>
+    </div>
+
+    <div class="featured-grid">
+
+      <article class="featured-card">
+        <div class="featured-image"><span class="featured-emoji">🛁</span></div>
+        <div class="featured-body">
+          <h3>Banho e tosa</h3>
+          <p>Do simples ao completo, com produtos hipoalergênicos e secagem sem estresse.</p>
+          <div class="tag-row tag-row--tight">
+            <span class="tag-chip">A partir de R$ 49,90</span>
+            <span class="tag-chip">Leva e traz</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured-card">
+        <div class="featured-image"><span class="featured-emoji">🩺</span></div>
+        <div class="featured-body">
+          <h3>Consulta veterinária</h3>
+          <p>Check-up completo, vacinação e orientação nutricional com equipe especializada.</p>
+          <div class="tag-row tag-row--tight">
+            <span class="tag-chip">A partir de R$ 89,90</span>
+            <span class="tag-chip">Encaixe no mesmo dia</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 11. AVALIAÇÕES DO PRODUTO (3 CARDS) ================= -->
+  <header class="section-header" id="avaliacoes">
+    <h2>Avaliações do produto</h2>
+    <p class="sub-header">O que os tutores estão dizendo</p>
+  </header>
+
+  <section class="carousel-section" aria-label="Avaliações de clientes">
+    <div class="reviews-grid">
+
+      <article class="review-card">
+        <div class="review-avatar">M</div>
+        <div class="review-body">
+          <strong>Mariana T. <span class="review-stars" aria-label="5 de 5 estrelas">★★★★★</span></strong>
+          <p>A ração chegou rápido e o meu vira-lata amou. Comprarei de novo com certeza.</p>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-avatar">R</div>
+        <div class="review-body">
+          <strong>Rafael S. <span class="review-stars" aria-label="4 de 5 estrelas">★★★★☆</span></strong>
+          <p>Banho e tosa impecáveis, meu gato saiu bem mais tranquilo do que da última vez.</p>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-avatar">C</div>
+        <div class="review-body">
+          <strong>Carla D. <span class="review-stars" aria-label="5 de 5 estrelas">★★★★★</span></strong>
+          <p>Atendimento da veterinária excelente, explicou tudo com calma e paciência.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 12. CONTEÚDO FINAL ================= -->
   <section class="closing">
     <h2>Cuide de quem faz parte da sua família</h2>
     <p>Encontre produtos, serviços e soluções para deixar seu pet saudável, feliz e bem cuidado.</p>
