@@ -9,9 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Poppins:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
 
-<!-- 1. HEADER -->
+  <!-- 1. HEADER -->
   <header class="site-header" id="header">
     <div class="wrap header-inner">
       <nav class="header-nav" aria-label="Principal">
@@ -513,6 +515,7 @@
     </div>
   </footer>
 
+  <!-- MOBILE DRAWER MENU -->
   <div class="mobile-drawer" id="drawer">
     <div class="drawer-panel">
       <strong style="font-family: var(--font-display); font-size: 1.4rem; color: var(--primary);">NUVEM PET</strong>
@@ -524,6 +527,7 @@
     </div>
   </div>
 
+  <!-- MODAL DE ARTIGO -->
   <div class="modal" id="articleModal">
     <div class="modal-card">
       <img id="modalImg" alt="" />
@@ -536,7 +540,10 @@
     </div>
   </div>
 
+  <!-- TOAST NOTIFICATION -->
   <div class="toast" id="toast" role="status"></div>
+
+  <!-- SCRIPT -->
   <script src="JS/script.js"></script>
 </body>
 </html>
