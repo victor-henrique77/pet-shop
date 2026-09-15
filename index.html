@@ -1,412 +1,541 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focinho de Pet — tudo para o seu bicho</title>
-  <meta name="description" content="Ração, brinquedos, higiene e serviços para cães, gatos e outros pets, com dicas de cuidado para o dia a dia.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuvem Pet — Cuidados, produtos e carinho para o seu melhor amigo</title>
+  <meta name="description" content="Pet shop e cuidados completos: rações premium, banho e tosa, veterinário, hotel e dicas para cães e gatos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Poppins:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/style.css">
-</head>
-<body>
-
-  <!-- ========================= 1. LOGO BAR ========================= -->
-  <header class="site-header">
-    <span class="logo">Focinho<span class="dot">.</span></span>
-    <button class="icon-button" aria-label="Ver sacola de compras">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-    </button>
-  </header>
-
-
-  <!-- ========================= 2. HERO ========================= -->
-  <section class="hero" id="topo">
-    <p class="hero-kicker">Cuidado de verdade, todo santo dia</p>
-    <h1>Tudo o que seu pet precisa para viver melhor</h1>
-    <p class="hero-lead">Ração, higiene, brinquedos e serviços — escolhidos para quem entende que pet é família.</p>
-
-    <div class="hero-image" role="img" aria-label="Cão e gato juntos, felizes">
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2"/><path d="M21 15 15 9l-9 9"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
-    </div>
-
-    <button class="scroll-button" onclick="document.getElementById('busca').scrollIntoView({behavior:'smooth'})" aria-label="Ir para busca">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-    </button>
-  </section>
-
-
-  <!-- ========================= 3. BUSCA ========================= -->
-  <section class="search-section" id="busca">
-    <label class="search-box">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" placeholder="O que o seu pet precisa hoje?" id="searchInput" aria-label="Buscar produtos">
-    </label>
-  </section>
-
-
-  <!-- ========================= 4. CATEGORIAS ========================= -->
-  <section class="categories" id="categorias">
-    <div class="category-row">
-      <button class="category-button">Cachorro</button>
-      <button class="category-button">Gato</button>
-      <button class="category-button">Peixe</button>
-      <button class="category-button">Outros pets</button>
-    </div>
-    <div class="category-row">
-      <button class="category-button">Promoções</button>
-      <button class="category-button">Serviços</button>
-      <button class="category-button">Casa e fora</button>
-    </div>
-  </section>
-
-
-  <main>
-
-    <!-- ================= 5. BANNERS (2x3) ================= -->
-    <section class="banners-grid" aria-label="Banners promocionais">
-      <article class="banner-card"><span class="banner-icon">🐾</span></article>
-      <article class="banner-card"><span class="banner-icon">🦴</span></article>
-      <article class="banner-card"><span class="banner-icon">🐟</span></article>
-      <article class="banner-card"><span class="banner-icon">🧴</span></article>
-      <article class="banner-card"><span class="banner-icon">🎾</span></article>
-      <article class="banner-card"><span class="banner-icon">✂️</span></article>
-    </section>
-
-    <!-- ================= 6. FILTROS + VITRINE ================= -->
-    <section class="carousel-section" id="vitrine" aria-label="Vitrine de produtos">
-      <nav class="filters-bar" aria-label="Filtros de categorias de produtos">
-        <button class="filter-pill is-active">Rações</button>
-        <button class="filter-pill">Coleiras</button>
-        <button class="filter-pill">Brinquedos</button>
-        <button class="filter-pill">Estética</button>
-        <button class="filter-pill">Higiene</button>
+<!-- 1. HEADER -->
+  <header class="site-header" id="header">
+    <div class="wrap header-inner">
+      <nav class="header-nav" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#vitrine">Loja</a>
+        <a href="#cuidados">Serviços</a>
+        <a href="#noticias">Blog</a>
       </nav>
 
-      <div class="carousel-wrapper">
-        <div class="products-grid">
+      <a href="#inicio" class="logo" aria-label="Nuvem Pet">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5C400">
+            <ellipse cx="6" cy="7.5" rx="2.3" ry="2.8"/>
+            <ellipse cx="18" cy="7.5" rx="2.3" ry="2.8"/>
+            <ellipse cx="10" cy="4.6" rx="2.1" ry="2.6"/>
+            <ellipse cx="14" cy="4.6" rx="2.1" ry="2.6"/>
+            <path d="M12 10.2c-3.6 0-6.4 2.5-6.4 5.3 0 2.4 2.2 3.7 6.4 3.7s6.4-1.3 6.4-3.7c0-2.8-2.8-5.3-6.4-5.3z"/>
+          </svg>
+        </span>
+        <span class="logo-text">NUVEM <span>PET</span></span>
+      </a>
 
-          <article class="product-card">
-            <div class="product-image"><span class="product-emoji">🍖</span></div>
-            <div class="product-info">
-              <h3>Ração premium sabor carne</h3>
-              <p>Adulto · porte médio · 15kg</p>
-            </div>
-            <div class="product-price">
-              <span class="price-main">R$ 99,99</span>
-              <span class="price-sub">à vista, de R$ 199,99</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image"><span class="product-emoji">🐕</span></div>
-            <div class="product-info">
-              <h3>Coleira ajustável acolchoada</h3>
-              <p>Nylon resistente · P ao G</p>
-            </div>
-            <div class="product-price">
-              <span class="price-main">R$ 99,99</span>
-              <span class="price-sub">à vista, de R$ 199,99</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image"><span class="product-emoji">🎾</span></div>
-            <div class="product-info">
-              <h3>Kit brinquedos mordedores</h3>
-              <p>3 peças · borracha atóxica</p>
-            </div>
-            <div class="product-price">
-              <span class="price-main">R$ 99,99</span>
-              <span class="price-sub">à vista, de R$ 199,99</span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image"><span class="product-emoji">🧴</span></div>
-            <div class="product-info">
-              <h3>Shampoo neutro hipoalergênico</h3>
-              <p>500ml · pele sensível</p>
-            </div>
-            <div class="product-price">
-              <span class="price-main">R$ 99,99</span>
-              <span class="price-sub">à vista, de R$ 199,99</span>
-            </div>
-          </article>
-
-        </div>
-
-        <button class="nav-arrow-btn" aria-label="Próxima página de produtos">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+      <div class="header-actions">
+        <button class="icon-btn menu-toggle" id="menuBtn" aria-label="Abrir menu">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h12M3 9h12M3 13h12"/></svg>
+        </button>
+        <button class="icon-btn" id="goSearch" aria-label="Buscar">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5.5"/><path d="M12.5 12.5L16 16"/></svg>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Carrinho">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l1.2 9h9.3l1.5-7H6"/><circle cx="9" cy="16" r="1.2"/><circle cx="14.5" cy="16" r="1.2"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
         </button>
       </div>
-    </section>
-
-  </main>
-
-
-  <!-- ================= 7. RAÇAS: CÍRCULOS + TAGS ================= -->
-  <section class="carousel-section" aria-label="Guias de raças">
-    <div class="carousel-wrapper">
-      <div class="circles-grid">
-
-        <div class="circle-item">
-          <div class="circle-avatar">🐶</div>
-          <div class="circle-caption">
-            <strong>Raças pequenas</strong>
-            <p>Guia de portes</p>
-            <span>Conheça os perfis</span>
-          </div>
-        </div>
-
-        <div class="circle-item">
-          <div class="circle-avatar">🐕</div>
-          <div class="circle-caption">
-            <strong>Raças médias</strong>
-            <p>Espaço e energia</p>
-            <span>Perfeito para famílias</span>
-          </div>
-        </div>
-
-        <div class="circle-item">
-          <div class="circle-avatar">🐕‍🦺</div>
-          <div class="circle-caption">
-            <strong>Raças grandes</strong>
-            <p>Força e carinho</p>
-            <span>Cuidados específicos</span>
-          </div>
-        </div>
-
-        <div class="circle-item">
-          <div class="circle-avatar">🐈</div>
-          <div class="circle-caption">
-            <strong>Gatos exóticos</strong>
-            <p>Mundo felino</p>
-            <span>Curiosidades e dicas</span>
-          </div>
-        </div>
-
-      </div>
-      <button class="nav-arrow-btn" aria-label="Próximo slide">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-      </button>
     </div>
+  </header>
 
-    <div class="tag-row" aria-label="Tags relacionadas">
-      <span class="tag-chip">Filhote</span>
-      <span class="tag-chip">Adulto</span>
-      <span class="tag-chip">Idoso</span>
-      <span class="tag-chip">Apartamento</span>
-      <span class="tag-chip">Quintal</span>
+  <!-- 2. HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-kicker">Pet shop &amp; cuidados completos</div>
+      <h1>O carinho que<br>seu pet <em>merece</em></h1>
+      <p>Rações premium, banho &amp; tosa, veterinário e hotel — tudo em um só lugar, com entrega rápida e atendimento humano.</p>
+      <button class="hero-cta" id="heroCta">Explorar a loja</button>
+    </div>
+    <button class="scroll-down" id="scrollDown" aria-label="Rolar para baixo">↓</button>
+  </section>
+
+  <!-- 3. SEARCH -->
+  <section class="search-section" id="searchSection">
+    <div class="wrap">
+      <form class="search-box" id="searchForm" role="search">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="9" r="6"/><path d="M14 14l4 4"/></svg>
+        <input type="search" id="searchInput" placeholder="Buscar rações, brinquedos, serviços..." autocomplete="off" />
+        <button class="search-submit" type="submit">Buscar</button>
+      </form>
     </div>
   </section>
 
-
-  <!-- ================= 8. CUIDADOS: CÍRCULOS + TAGS ================= -->
-  <header class="section-header" id="cuidados">
-    <h2>Cuidados rápidos e bem-estar</h2>
-    <p class="sub-header">Dicas práticas para o dia a dia do seu pet</p>
-  </header>
-
-  <section class="carousel-section" aria-label="Categorias de cuidado">
-    <div class="carousel-wrapper">
-      <div class="circles-grid">
-
-        <div class="circle-item">
-          <div class="circle-avatar">🛁</div>
-          <div class="circle-caption">
-            <strong>Higienização</strong>
-            <p>Banhos e tosas</p>
-            <span>Frequência ideal</span>
-          </div>
-        </div>
-
-        <div class="circle-item">
-          <div class="circle-avatar">💉</div>
-          <div class="circle-caption">
-            <strong>Vacinação</strong>
-            <p>Calendário anual</p>
-            <span>Mantenha atualizado</span>
-          </div>
-        </div>
-
-        <div class="circle-item">
-          <div class="circle-avatar">🍽️</div>
-          <div class="circle-caption">
-            <strong>Alimentação</strong>
-            <p>Rações e petiscos</p>
-            <span>Porções diárias</span>
-          </div>
-        </div>
-
-        <div class="circle-item">
-          <div class="circle-avatar">🏃</div>
-          <div class="circle-caption">
-            <strong>Exercícios</strong>
-            <p>Passeios diários</p>
-            <span>Saúde em dia</span>
-          </div>
-        </div>
-
+  <!-- 4. FILTERS -->
+  <div class="wrap">
+    <div class="filters" id="filters">
+      <div class="filters-row">
+        <button class="filter-pill active" data-filter="todos">Todos</button>
+        <button class="filter-pill" data-filter="caes">Cães</button>
+        <button class="filter-pill" data-filter="gatos">Gatos</button>
+        <button class="filter-pill" data-filter="racoes">Rações</button>
+        <button class="filter-pill" data-filter="higiene">Higiene</button>
+        <button class="filter-pill" data-filter="brinquedos">Brinquedos</button>
+        <button class="filter-pill" data-filter="farmacia">Farmácia</button>
+        <button class="filter-pill" data-filter="acessorios">Acessórios</button>
+        <button class="filter-pill" data-filter="servicos">Serviços</button>
+        <button class="filter-pill" data-filter="ofertas">Ofertas</button>
       </div>
-      <button class="nav-arrow-btn" aria-label="Próximo slide">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-      </button>
     </div>
+  </div>
 
-    <div class="tag-row" aria-label="Tags relacionadas">
-      <span class="tag-chip">Diário</span>
-      <span class="tag-chip">Semanal</span>
-      <span class="tag-chip">Mensal</span>
-      <span class="tag-chip">Sazonal</span>
-      <span class="tag-chip">Emergência</span>
-    </div>
-  </section>
-
-
-  <!-- ================= 9. ARTIGOS ================= -->
-  <header class="section-header" id="artigos">
-    <h2>Notícias e artigos em destaque</h2>
-    <p class="sub-header">Fique por dentro das novidades do mundo animal</p>
-  </header>
-
-  <section class="carousel-section" aria-label="Artigos em destaque">
-    <div class="carousel-wrapper">
-      <div class="content-cards-grid">
-
-        <article class="content-card">
-          <div class="card-image-placeholder">📖</div>
-          <div class="card-body">
-            <h3>Como escolher a melhor ração?</h3>
-            <p>Entenda os rótulos e ingredientes essenciais para cada fase da vida do animal.</p>
-            <span class="card-meta">Leitura de 3 minutos · Artigo</span>
+  <!-- 5. BANNERS 3x2 -->
+  <section class="section" id="promos">
+    <div class="wrap">
+      <div class="banners-grid">
+        <article class="banner-card" data-goto="vitrine">
+          <img src="https://images.pexels.com/photos/11106140/pexels-photo-11106140.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Golden retriever ao sol" />
+          <div class="overlay"></div>
+          <div class="banner-copy">
+            <span class="tag">Até 40% off</span>
+            <h3>Ração Premium</h3>
+            <p>Nutrição de verdade para cada fase da vida.</p>
           </div>
         </article>
-
-        <article class="content-card">
-          <div class="card-image-placeholder">🐾</div>
-          <div class="card-body">
-            <h3>Adestramento positivo em casa</h3>
-            <p>Técnicas simples para ensinar comandos básicos e melhorar a convivência.</p>
-            <span class="card-meta">Leitura de 5 minutos · Guia</span>
+        <article class="banner-card" data-goto="cuidados">
+          <img src="https://images.pexels.com/photos/19145888/pexels-photo-19145888.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Cão no banho de pet shop" />
+          <div class="overlay"></div>
+          <div class="banner-copy">
+            <span class="tag">Agenda aberta</span>
+            <h3>Banho &amp; Tosa</h3>
+            <p>Spa completo com produtos hipoalergênicos.</p>
           </div>
         </article>
-
-        <article class="content-card">
-          <div class="card-image-placeholder">💛</div>
-          <div class="card-body">
-            <h3>Sinais de ansiedade em pets</h3>
-            <p>Aprenda a identificar comportamentos estressantes e saiba como agir.</p>
-            <span class="card-meta">Leitura de 4 minutos · Saúde</span>
+        <article class="banner-card" data-goto="cuidados">
+          <img src="https://images.pexels.com/photos/6235648/pexels-photo-6235648.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Veterinário examinando um cão" />
+          <div class="overlay"></div>
+          <div class="banner-copy">
+            <span class="tag">A partir de R$ 89</span>
+            <h3>Consulta Vet</h3>
+            <p>Check-up, vacinas e orientação nutricional.</p>
           </div>
         </article>
-
+        <article class="banner-card" data-goto="vitrine">
+          <img src="https://images.pexels.com/photos/19449515/pexels-photo-19449515.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Cão brincando com pelúcia" />
+          <div class="overlay"></div>
+          <div class="banner-copy">
+            <span class="tag">Novidades</span>
+            <h3>Brinquedos</h3>
+            <p>Diversão, estímulo e tempo de qualidade.</p>
+          </div>
+        </article>
+        <article class="banner-card" data-goto="cuidados">
+          <img src="https://images.pexels.com/photos/29058500/pexels-photo-29058500.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Passeio com cães no parque" />
+          <div class="overlay"></div>
+          <div class="banner-copy">
+            <span class="tag">Diárias especiais</span>
+            <h3>Hotel Pet</h3>
+            <p>Hospedagem com câmeras e passeios diários.</p>
+          </div>
+        </article>
+        <article class="banner-card" data-goto="noticias">
+          <img src="https://images.pexels.com/photos/29816190/pexels-photo-29816190.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gato laranja fofo" />
+          <div class="overlay"></div>
+          <div class="banner-copy">
+            <span class="tag">Comunidade</span>
+            <h3>Adoção</h3>
+            <p>Encontre um novo melhor amigo com responsabilidade.</p>
+          </div>
+        </article>
       </div>
-      <button class="nav-arrow-btn" aria-label="Próximo slide">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-      </button>
     </div>
   </section>
 
-
-  <!-- ================= 10. SERVIÇOS EM DESTAQUE (2 CARDS) ================= -->
-  <header class="section-header" id="servicos">
-    <h2>Serviços em destaque</h2>
-    <p class="sub-header">Marque um horário direto pelo app ou na loja mais próxima</p>
-  </header>
-
-  <section class="carousel-section" aria-label="Serviços em destaque">
-    <div class="tag-row" aria-label="Tipos de serviço">
-      <span class="tag-chip">Agendamento rápido</span>
-      <span class="tag-chip">Sem fila</span>
-      <span class="tag-chip">Profissionais certificados</span>
-    </div>
-
-    <div class="featured-grid">
-
-      <article class="featured-card">
-        <div class="featured-image"><span class="featured-emoji">🛁</span></div>
-        <div class="featured-body">
-          <h3>Banho e tosa</h3>
-          <p>Do simples ao completo, com produtos hipoalergênicos e secagem sem estresse.</p>
-          <div class="tag-row tag-row--tight">
-            <span class="tag-chip">A partir de R$ 49,90</span>
-            <span class="tag-chip">Leva e traz</span>
-          </div>
+  <!-- 6. CIRCULAR CAROUSEL 1 — RAÇAS -->
+  <section class="section" id="racas">
+    <div class="wrap">
+      <div class="carousel-row">
+        <div class="carousel-track" id="breedsTrack">
+          <article class="circle-item" data-filter-set="caes">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/9294288/pexels-photo-9294288.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Golden Retriever" /></div>
+            <h4>Golden</h4>
+            <p class="sub">Amigável e ativo</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
+          <article class="circle-item" data-filter-set="caes">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/35333083/pexels-photo-35333083.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pastor Alemão" /></div>
+            <h4>Pastor</h4>
+            <p class="sub">Guardião leal</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
+          <article class="circle-item" data-filter-set="caes">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/31965855/pexels-photo-31965855.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Poodle" /></div>
+            <h4>Poodle</h4>
+            <p class="sub">Inteligente</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
+          <article class="circle-item" data-filter-set="caes">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/35386961/pexels-photo-35386961.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yorkshire" /></div>
+            <h4>Yorkshire</h4>
+            <p class="sub">Compacto e doce</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
+          <article class="circle-item" data-filter-set="gatos">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/26158841/pexels-photo-26158841.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gato persa" /></div>
+            <h4>Persa</h4>
+            <p class="sub">Elegante</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
+          <article class="circle-item" data-filter-set="caes">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/38987918/pexels-photo-38987918.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Filhote" /></div>
+            <h4>Filhotes</h4>
+            <p class="sub">Começo de vida</p>
+            <p class="tag-link">Kit inicial</p>
+          </article>
+          <article class="circle-item" data-filter-set="caes">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/32947255/pexels-photo-32947255.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Shetland Sheepdog" /></div>
+            <h4>Collie</h4>
+            <p class="sub">Pelagem nobre</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
+          <article class="circle-item" data-filter-set="gatos">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/19907363/pexels-photo-19907363.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gato malhado" /></div>
+            <h4>Siamês</h4>
+            <p class="sub">Curioso e vocal</p>
+            <p class="tag-link">Ver produtos</p>
+          </article>
         </div>
-      </article>
-
-      <article class="featured-card">
-        <div class="featured-image"><span class="featured-emoji">🩺</span></div>
-        <div class="featured-body">
-          <h3>Consulta veterinária</h3>
-          <p>Check-up completo, vacinação e orientação nutricional com equipe especializada.</p>
-          <div class="tag-row tag-row--tight">
-            <span class="tag-chip">A partir de R$ 89,90</span>
-            <span class="tag-chip">Encaixe no mesmo dia</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-
-  <!-- ================= 11. AVALIAÇÕES DO PRODUTO (3 CARDS) ================= -->
-  <header class="section-header" id="avaliacoes">
-    <h2>Avaliações do produto</h2>
-    <p class="sub-header">O que os tutores estão dizendo</p>
-  </header>
-
-  <section class="carousel-section" aria-label="Avaliações de clientes">
-    <div class="reviews-grid">
-
-      <article class="review-card">
-        <div class="review-avatar">M</div>
-        <div class="review-body">
-          <strong>Mariana T. <span class="review-stars" aria-label="5 de 5 estrelas">★★★★★</span></strong>
-          <p>A ração chegou rápido e o meu vira-lata amou. Comprarei de novo com certeza.</p>
-        </div>
-      </article>
-
-      <article class="review-card">
-        <div class="review-avatar">R</div>
-        <div class="review-body">
-          <strong>Rafael S. <span class="review-stars" aria-label="4 de 5 estrelas">★★★★☆</span></strong>
-          <p>Banho e tosa impecáveis, meu gato saiu bem mais tranquilo do que da última vez.</p>
-        </div>
-      </article>
-
-      <article class="review-card">
-        <div class="review-avatar">C</div>
-        <div class="review-body">
-          <strong>Carla D. <span class="review-stars" aria-label="5 de 5 estrelas">★★★★★</span></strong>
-          <p>Atendimento da veterinária excelente, explicou tudo com calma e paciência.</p>
-        </div>
-      </article>
-
+        <button class="nav-arrow" data-target="breedsTrack" aria-label="Próximas raças">►</button>
+      </div>
     </div>
   </section>
 
-
-  <!-- ================= 12. CONTEÚDO FINAL ================= -->
-  <section class="closing">
-    <h2>Cuide de quem faz parte da sua família</h2>
-    <p>Encontre produtos, serviços e soluções para deixar seu pet saudável, feliz e bem cuidado.</p>
-    <a href="#vitrine" class="btn btn-primary">Explorar produtos</a>
+  <!-- 7. TÍTULO 1 -->
+  <section class="section" id="cuidados" style="padding-bottom: 0;">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title">
+          <span class="line-1">Cuidados</span>
+          <span class="line-2">na palma da pata</span>
+        </h2>
+      </header>
+    </div>
   </section>
 
-  <footer class="site-footer">
-    <span>© 2026 Focinho de Pet</span>
-    <nav aria-label="Links do rodapé">
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
-      <a href="#">Política de privacidade</a>
-    </nav>
+  <!-- 8. CIRCULAR CAROUSEL 2 — CUIDADOS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="carousel-row">
+        <div class="carousel-track" id="careTrack">
+          <article class="circle-item" data-service="Banho Express">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/19145888/pexels-photo-19145888.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Banho" /></div>
+            <h4>Banho Express</h4>
+            <p class="sub">60 minutos</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+          <article class="circle-item" data-service="Tosa Higiênica">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/19145895/pexels-photo-19145895.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tosa" /></div>
+            <h4>Tosa Higiênica</h4>
+            <p class="sub">Acabamento fino</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+          <article class="circle-item" data-service="Vacinação">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/7468978/pexels-photo-7468978.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vacinação" /></div>
+            <h4>Vacinação</h4>
+            <p class="sub">Calendário completo</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+          <article class="circle-item" data-service="Consulta Veterinária">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/6235017/pexels-photo-6235017.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Consulta" /></div>
+            <h4>Consulta</h4>
+            <p class="sub">Clínica geral</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+          <article class="circle-item" data-service="Passeio Monitorado">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/8106472/pexels-photo-8106472.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Passeio" /></div>
+            <h4>Passeio</h4>
+            <p class="sub">Com rastreador</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+          <article class="circle-item" data-service="Hotel Pet">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/25695963/pexels-photo-25695963.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel" /></div>
+            <h4>Hotel Pet</h4>
+            <p class="sub">Diária a partir de R$ 79</p>
+            <p class="tag-link">Reservar</p>
+          </article>
+          <article class="circle-item" data-service="Pet Sitter">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/32846940/pexels-photo-32846940.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pet sitter" /></div>
+            <h4>Pet Sitter</h4>
+            <p class="sub">Em casa</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+          <article class="circle-item" data-service="Spa Relax">
+            <div class="avatar-ring"><img src="https://images.pexels.com/photos/13062569/pexels-photo-13062569.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Spa" /></div>
+            <h4>Spa Relax</h4>
+            <p class="sub">Hidratação &amp; massagem</p>
+            <p class="tag-link">Agendar</p>
+          </article>
+        </div>
+        <button class="nav-arrow" data-target="careTrack" aria-label="Próximos cuidados">►</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. TÍTULO 2 -->
+  <section class="section" id="vitrine" style="padding-bottom: 0;">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title">
+          <span class="line-1">Produtos</span>
+          <span class="line-2">para mimar</span>
+        </h2>
+      </header>
+    </div>
+  </section>
+
+  <!-- 10. PRODUCT CAROUSEL -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="carousel-row">
+        <div class="carousel-track" id="productsTrack">
+          <article class="product-card" data-name="ração super premium adulto 15kg" data-cat="racoes caes ofertas">
+            <div class="product-media">
+              <span class="badge off">-25%</span>
+              <img src="https://images.pexels.com/photos/34952074/pexels-photo-34952074.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Ração premium" />
+            </div>
+            <div class="product-body">
+              <h3>Ração Super Premium Adulto 15kg</h3>
+              <p class="price">R$ 189,90</p>
+              <p class="installments">3x de R$ 63,30 sem juros</p>
+              <button class="add-btn" data-product="Ração Super Premium Adulto 15kg">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="torre arranhador premium 1,2m" data-cat="gatos acessorios">
+            <div class="product-media">
+              <span class="badge">Novo</span>
+              <img src="https://images.pexels.com/photos/19907363/pexels-photo-19907363.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Gato e arranhador" />
+            </div>
+            <div class="product-body">
+              <h3>Torre Arranhador Premium 1,2m</h3>
+              <p class="price">R$ 249,90</p>
+              <p class="installments">4x de R$ 62,48 sem juros</p>
+              <button class="add-btn" data-product="Torre Arranhador Premium 1,2m">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="coleira antipulgas 8 meses" data-cat="farmacia caes gatos ofertas">
+            <div class="product-media">
+              <span class="badge off">Oferta</span>
+              <img src="https://images.pexels.com/photos/37559533/pexels-photo-37559533.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Coleiras para pets" />
+            </div>
+            <div class="product-body">
+              <h3>Coleira Antipulgas 8 meses</h3>
+              <p class="price">R$ 79,90</p>
+              <p class="installments">2x de R$ 39,95 sem juros</p>
+              <button class="add-btn" data-product="Coleira Antipulgas 8 meses">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="cama ortopédica memory foam" data-cat="acessorios caes">
+            <div class="product-media">
+              <img src="https://images.pexels.com/photos/11186548/pexels-photo-11186548.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cão em cama macia" />
+            </div>
+            <div class="product-body">
+              <h3>Cama Ortopédica Memory Foam</h3>
+              <p class="price">R$ 159,90</p>
+              <p class="installments">3x de R$ 53,30 sem juros</p>
+              <button class="add-btn" data-product="Cama Ortopédica Memory Foam">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="brinquedo interativo treat ball" data-cat="brinquedos caes">
+            <div class="product-media">
+              <span class="badge">Top</span>
+              <img src="https://images.pexels.com/photos/34059056/pexels-photo-34059056.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cão com brinquedo" />
+            </div>
+            <div class="product-body">
+              <h3>Brinquedo Interativo Treat Ball</h3>
+              <p class="price">R$ 45,90</p>
+              <p class="installments">À vista no Pix: R$ 42,90</p>
+              <button class="add-btn" data-product="Brinquedo Interativo Treat Ball">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="shampoo hipoalergênico 500ml" data-cat="higiene caes gatos">
+            <div class="product-media">
+              <img src="https://images.pexels.com/photos/19145883/pexels-photo-19145883.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Banho com shampoo pet" />
+            </div>
+            <div class="product-body">
+              <h3>Shampoo Hipoalergênico 500ml</h3>
+              <p class="price">R$ 34,90</p>
+              <p class="installments">Ou 2x de R$ 17,45</p>
+              <button class="add-btn" data-product="Shampoo Hipoalergênico 500ml">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="snack dental natural 200g" data-cat="racoes caes ofertas">
+            <div class="product-media">
+              <span class="badge off">-15%</span>
+              <img src="https://images.pexels.com/photos/13581209/pexels-photo-13581209.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cão ao lado da tigela" />
+            </div>
+            <div class="product-body">
+              <h3>Snack Dental Natural 200g</h3>
+              <p class="price">R$ 29,90</p>
+              <p class="installments">À vista no Pix: R$ 27,90</p>
+              <button class="add-btn" data-product="Snack Dental Natural 200g">Adicionar</button>
+            </div>
+          </article>
+          <article class="product-card" data-name="fonte de água automática" data-cat="acessorios gatos caes">
+            <div class="product-media">
+              <img src="https://images.pexels.com/photos/29816190/pexels-photo-29816190.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Gato hidratado" />
+            </div>
+            <div class="product-body">
+              <h3>Fonte de Água Automática</h3>
+              <p class="price">R$ 119,90</p>
+              <p class="installments">3x de R$ 39,97 sem juros</p>
+              <button class="add-btn" data-product="Fonte de Água Automática">Adicionar</button>
+            </div>
+          </article>
+        </div>
+        <button class="nav-arrow" data-target="productsTrack" aria-label="Próximos produtos">►</button>
+      </div>
+      <p class="empty-state" id="emptyState">Nenhum produto encontrado para essa busca. Tente outra palavra ou filtro.</p>
+    </div>
+  </section>
+
+  <!-- 11. TÍTULO 3 -->
+  <section class="section" id="noticias" style="padding-bottom: 0;">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title">
+          <span class="line-1">Leituras</span>
+          <span class="line-2">&amp; novidades</span>
+        </h2>
+      </header>
+    </div>
+  </section>
+
+  <!-- 12. ARTICLES CAROUSEL -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="carousel-row">
+        <div class="carousel-track" id="articlesTrack">
+          <article class="article-card" data-article="0">
+            <img src="https://images.pexels.com/photos/34952074/pexels-photo-34952074.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ração e nutrição" />
+            <div class="article-body">
+              <h3>Como escolher a ração ideal</h3>
+              <p>Idade, porte e condições de saúde mudam tudo. Um guia simples para acertar na tigela.</p>
+              <p class="meta">Nutrição · 6 min de leitura</p>
+            </div>
+          </article>
+          <article class="article-card" data-article="1">
+            <img src="https://images.pexels.com/photos/7469222/pexels-photo-7469222.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Check-up veterinário" />
+            <div class="article-body">
+              <h3>Sinais de que é hora do vet</h3>
+              <p>Apetite, energia e comportamento: os alertas que não devem esperar a próxima consulta de rotina.</p>
+              <p class="meta">Saúde · 5 min de leitura</p>
+            </div>
+          </article>
+          <article class="article-card" data-article="2">
+            <img src="https://images.pexels.com/photos/19145888/pexels-photo-19145888.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Banho profissional" />
+            <div class="article-body">
+              <h3>Banho em casa vs. pet shop</h3>
+              <p>Quando vale o DIY e quando o spa profissional protege pele, pelagem e o bem-estar do seu pet.</p>
+              <p class="meta">Cuidados · 4 min de leitura</p>
+            </div>
+          </article>
+          <article class="article-card" data-article="3">
+            <img src="https://images.pexels.com/photos/26158841/pexels-photo-26158841.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Gato de olhos verdes" />
+            <div class="article-body">
+              <h3>Enriquecimento para gatos</h3>
+              <p>Arranhadores, altura e brincadeiras curtas: o combo que reduz estresse e destruição em casa.</p>
+              <p class="meta">Comportamento · 7 min de leitura</p>
+            </div>
+          </article>
+          <article class="article-card" data-article="4">
+            <img src="https://images.pexels.com/photos/29058500/pexels-photo-29058500.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Cães no parque" />
+            <div class="article-body">
+              <h3>Passeios que cansam de verdade</h3>
+              <p>Não é só distância: farejar, treinar e socializar deixam o cão mentalmente satisfeito.</p>
+              <p class="meta">Rotina · 5 min de leitura</p>
+            </div>
+          </article>
+        </div>
+        <button class="nav-arrow" data-target="articlesTrack" aria-label="Próximos artigos">►</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FOOTER -->
+  <footer class="site-footer" id="contato">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#inicio" class="logo">
+            <span class="logo-mark" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5C400">
+                <ellipse cx="6" cy="7.5" rx="2.3" ry="2.8"/>
+                <ellipse cx="18" cy="7.5" rx="2.3" ry="2.8"/>
+                <ellipse cx="10" cy="4.6" rx="2.1" ry="2.6"/>
+                <ellipse cx="14" cy="4.6" rx="2.1" ry="2.6"/>
+                <path d="M12 10.2c-3.6 0-6.4 2.5-6.4 5.3 0 2.4 2.2 3.7 6.4 3.7s6.4-1.3 6.4-3.7c0-2.8-2.8-5.3-6.4-5.3z"/>
+              </svg>
+            </span>
+            <span class="logo-text">NUVEM <span>PET</span></span>
+          </a>
+          <p>Um refúgio bege e acolhedor para quem ama pets. Produtos selecionados, serviços com hora marcada e conteúdo de confiança.</p>
+        </div>
+        <div>
+          <h4>Casa</h4>
+          <ul>
+            <li><a href="#vitrine">Loja</a></li>
+            <li><a href="#cuidados">Serviços</a></li>
+            <li><a href="#noticias">Blog</a></li>
+            <li><a href="#racas">Raças</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Atendimento</h4>
+          <ul>
+            <li>Rua das Acácias, 128 — Jardins</li>
+            <li>São Paulo, SP</li>
+            <li>(11) 4000-2026</li>
+            <li>Seg a Sáb · 8h às 20h</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Novidades</h4>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">Receba ofertas e dicas de cuidado no e-mail.</p>
+          <form class="newsletter" id="newsForm">
+            <input type="email" id="newsEmail" placeholder="seu@email.com" required />
+            <button type="submit">Quero</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Nuvem Pet · Cuidados com carinho · CNPJ 12.345.678/0001-90
+      </div>
+    </div>
   </footer>
 
+  <div class="mobile-drawer" id="drawer">
+    <div class="drawer-panel">
+      <strong style="font-family: var(--font-display); font-size: 1.4rem; color: var(--primary);">NUVEM PET</strong>
+      <a href="#inicio">Início</a>
+      <a href="#vitrine">Loja</a>
+      <a href="#cuidados">Serviços</a>
+      <a href="#noticias">Blog</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+
+  <div class="modal" id="articleModal">
+    <div class="modal-card">
+      <img id="modalImg" alt="" />
+      <div class="inner">
+        <p class="meta" id="modalMeta"></p>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText" style="margin: 10px 0 0; color: var(--text-muted);"></p>
+        <button class="close-modal" id="closeModal">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
   <script src="JS/script.js"></script>
 </body>
 </html>
